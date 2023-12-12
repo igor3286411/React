@@ -1,0 +1,33 @@
+.card {
+    position: relative;
+    background-color: rgb(173, 166, 158);
+    padding: 20px;
+    width: 300px;
+    border-radius: 20px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+.card-p {
+    font-size: 18px;
+    margin: 10px 0 50px;
+}
+
+button {
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+    border: solid rgb(103, 107, 94) 2px;
+    background-color: rgb(255, 215, 167);
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+
+button:hover{
+    background-color: rgb(243, 230, 138);
+    transition: .2s;
+}

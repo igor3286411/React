@@ -1,0 +1,14 @@
+a{
+    padding: 20px;
+    text-decoration: none;
+    background-color: rgb(88, 86, 86);
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+a:hover{
+    background-color: gray;
+    transition: .2s;
+}
