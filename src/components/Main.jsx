@@ -8,8 +8,8 @@ const Main = ({ posts, addPost }) => {
   const addNewPost = () => {
     const newPost = { id: 4, title: postTitle, body: postBody };
     addPost(newPost);
-    setPostTitle();
-    setPostBody();
+    setPostTitle('');
+    setPostBody('');
   };
 
   const onChangeTitle = (e) => {
@@ -17,7 +17,7 @@ const Main = ({ posts, addPost }) => {
   };
 
   const onChangeBody = (e) => {
-    setPostTitle(e.target.value);
+    setPostBody(e.target.value);
   };
 
   return (

@@ -1,8 +1,8 @@
 const Post = ({post}) => {
     return (
         <div className="post">
-            <div>{post.title}</div>
-            <div>{post.body}</div>
+            <h2>{post.title} - </h2>
+            <p>{post.body}</p>
         </div>
     )
 }
