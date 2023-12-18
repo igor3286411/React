@@ -2,8 +2,8 @@ import { useState } from "react";
 import PostList from "./PostList";
 
 const Main = ({ posts, addPost }) => {
-  const [postTitle, setPostTitle] = useState();
-  const [postBody, setPostBody] = useState();
+  const [postTitle, setPostTitle] = useState('');
+  const [postBody, setPostBody] = useState('');
 
   const addNewPost = () => {
     const newPost = { id: 4, title: postTitle, body: postBody };
