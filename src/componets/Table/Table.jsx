@@ -14,10 +14,10 @@ export const Table = () => {
   ];
 
   const hadleSortDataString = () => {
-    // setTableData((prevState) =>
-    //   prevState.sort((a, b) => a.name.localeCompare(b.name))
-    // );
-    setTableData(prevState => prevState.sort((a, b) => a.name < b.name ? -1 : 1))
+    setTableData((prevState) =>
+      prevState.sort((a, b) => a.name.localeCompare(b.name))
+    );
+    // setTableData(prevState => prevState.sort((a, b) => a.name < b.name ? -1 : 1))
   };
 
   const hadleSortDataNumber = () => {
