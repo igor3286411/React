@@ -12,12 +12,12 @@ export const Table = () => {
     { lable: "Age", key: "age" },
     { lable: "Email", key: "email" },
   ];
-
-  const hadleSortDataString = () => {
-    setTableData((prevState) =>
-      prevState.sort((a, b) => a.name.localeCompare(b.name))
-    );
-    // setTableData(prevState => prevState.sort((a, b) => a.name < b.name ? -1 : 1))
+  console.log(tableData);
+  const hadleSortDataString = (e, keyId) => {
+    // setTableData((prevState) =>
+    //   prevState.sort((a, b) => a[keyId].localeCompare(b[keyId]))
+    // );
+    setTableData(prevState => prevState.sort((a, b) => a[keyId] < b[keyId] ? -1 : 1))
   };
 
   const hadleSortDataNumber = () => {
@@ -36,10 +36,10 @@ export const Table = () => {
       {/* <TableHead columns={columns}/> */}
       <thead>
         <tr>
-          <TableHead lable="Full Name" key="full_name" />
-          <TableHead lable="Gender" key="gender" />
-          <TableHead lable="Age" key="age" />
-          <TableHead lable="Email" key="email" />
+          <TableHead lable="Full Name" keys="full_name" onClick={hadleSortDataString} />
+          <TableHead lable="Gender" keys="gender" onClick={hadleSortDataString} />
+          <TableHead lable="Age" keys="age" onClick={hadleSortDataString}/>
+          <TableHead lable="Email" keys="email" onClick={hadleSortDataString}/>
         </tr>
       </thead>
       <TableBody columns={columns} tableData={tableData} />

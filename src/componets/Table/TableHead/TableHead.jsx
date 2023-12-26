@@ -8,8 +8,10 @@
 //     )
 // }
 
-export const TableHead = ({ lable }, { key }) => {
+export const TableHead = ({ lable, keys, onClick}) => {
   return (
-        <th key={key}>{lable}</th>
+    <th key={keys} onClick={e => onClick(e, keys)}>
+      {lable}
+    </th>
   );
 };
