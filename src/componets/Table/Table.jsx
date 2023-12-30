@@ -13,15 +13,3 @@ export const Table = ({ columns, data }) => {
     </table>
   );
 };
-
-// const hadleSortDataString = () => {
-//   setTableData(prevState => prevState.sort((a, b) => a.name.localeCompare(b.name)))
-//   // setTableData(prevState => prevState.sort((a, b) => a.name < b.name ? -1 : 1))
-
-// }
-
-// const hadleSortDataNumber = () => {
-//   // setTableData(prevState => prevState.sort((a, b) => a.age - b.age))
-//   setTableData(prevState => prevState.sort((a, b) => a.age.toString().localeCompare(b.age.toString(), 'en', { numeric:true})))
-
-// }

@@ -1,6 +1,7 @@
 function UserData(props) {
 
     const { persons } = props
+    console.log(persons);
 
     if (!persons || persons.length === 0) return <p>Нет данных.</p>
 
@@ -9,11 +10,11 @@ function UserData(props) {
             <table>
                 <thead>
                     <tr>
-                        <th>id</th>
-                        <th>firstName</th>
-                        <th>lastName</th>
-                        <th>email</th>
-                        <th>phone</th>
+                        <th>№</th>
+                        <th>Name</th>
+                        <th>UserName(Nik)</th>
+                        <th>Email</th>
+                        <th>Adress</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -21,10 +22,10 @@ function UserData(props) {
                         persons.map((person) =>
                             <tr key={person.id}>
                                 <td>{person.id}</td>
-                                <td>{person.firstName}</td>
-                                <td>{person.lastName}</td>
+                                <td>{person.name}</td>
+                                <td>{person.username}</td>
                                 <td>{person.email}</td>
-                                <td>{person.phone}</td>
+                                <td>{person.address.city}, {person.address.street}, {person.address.suite}</td>
                             </tr>
                         )
                     }
