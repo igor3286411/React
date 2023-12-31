@@ -7,10 +7,11 @@ import { Table } from "./componets/Table/Table";
 // import tableData1 from "./tableData.json"
 
 const columns = [
-  { lable: "Full Name", key: "full_name", sortable: true },
-  { lable: "Gender", key: "gender", sortable: true, sortbyOrder: 'desc' },
-  { lable: "Age", key: "age", sortable: true },
-  { lable: "Email", key: "email", sortable: false },
+  { lable: "№", key: "id", sortable: true },
+  { lable: "Name", key: "name", sortable: true },
+  { lable: "UserName(Nik)", key: "username", sortable: true},
+  { lable: "Email", key: "email", sortable: true },
+  { lable: "Adress", key: "address", sortable: true },
 ];
 
 // return (
@@ -40,6 +41,7 @@ function App() {
       });
     });
   }, [setAppState]);
+
 
   return (
     <div className="app">
