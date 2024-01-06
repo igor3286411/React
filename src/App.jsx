@@ -1,13 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import UserData from "./componets/UserData";
-import LoadingPersonsData from "./componets/LoadingPersonsData";
 import "./App.css";
-const postArray = [];
 
 function App() {
-  const [posts, setPosts] = useState(postArray);
-  const [count, setCount] = useState(11)
+  const [posts, setPosts] = useState([]);
+  const [count, setCount] = useState(11);
   const addPost = (newPost) => {
     setPosts([...posts, newPost]);
   };
@@ -18,7 +16,7 @@ function App() {
   const [postAdress, setPostAdress] = useState("");
 
   const addNewPost = () => {
-    setCount((count) => count + 1)
+    setCount((count) => count + 1);
     const newPost = {
       id: count,
       name: postName,
@@ -48,8 +46,6 @@ function App() {
     setPostAdress(e.target.value);
   };
 
-  const DataLoading = LoadingPersonsData(UserData);
-
   const [appState, setAppState] = useState({
     loading: false,
     persons: null,
@@ -71,20 +67,28 @@ function App() {
     <div className="app">
       <div className="main">
         <div className="inputs">
-          <label>Name: <input value={postName} onChange={onChangeName} /></label>
-          <label>Nik: <input value={postUserName} onChange={onChangeUserName} /></label>
-          <label>Email: <input value={postEmail} onChange={onChangeEmail} /></label>
-          <label>Adress: <input value={postAdress} onChange={onChangeAdress} /></label>
+          <label>
+            Name: <input value={postName} onChange={onChangeName} />
+          </label>
+          <label>
+            Nik: <input value={postUserName} onChange={onChangeUserName} />
+          </label>
+          <label>
+            Email: <input value={postEmail} onChange={onChangeEmail} />
+          </label>
+          <label>
+            Adress: <input value={postAdress} onChange={onChangeAdress} />
+          </label>
         </div>
         <div>
           <button onClick={addNewPost}>Добавить</button>
         </div>
       </div>
-      <DataLoading
-        isLoading={appState.loading}
-        persons={appState.persons}
-        posts={posts}
-      />
+      {appState.loading ? (
+        <h1>Подождите, данные загружаются!</h1>
+      ) : (
+        <UserData persons={appState.persons} posts={posts} />
+      )}
     </div>
   );
 }
